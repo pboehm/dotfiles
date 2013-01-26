@@ -18,6 +18,9 @@ ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[blue]%}"
 
 export PROMPT='[%B%n%b@%m %2~$(git_super_status)]%# '
 
+# syntax highlighting
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
 # variables
 HISTFILE=~/.zhistory
 HISTSIZE=10000
