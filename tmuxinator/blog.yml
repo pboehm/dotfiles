@@ -1,0 +1,7 @@
+project_name: blog
+project_root: ~/projects/blog.pboehm.org
+rvm: ruby-1.9.3-p362@octopress_blog
+tabs:
+  - preview: bundle exec rake preview
+  - watch: bundle exec rake watch
+  - zsh: gvim .
