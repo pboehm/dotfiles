@@ -36,7 +36,6 @@ set secure
 
 syntax enable
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Management: List of installed plugins "
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -48,9 +47,6 @@ Bundle 'gmarik/vundle'
 
 " NerdTree file explorer
 Bundle 'scrooloose/nerdtree'
-
-" THE rails gem
-" Bundle 'tpope/vim-rails.git'
 
 " surround or change surrounding of text
 Bundle 'tpope/vim-surround'
@@ -110,12 +106,14 @@ let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*build/*
 
+" set the default action of Enter to new Tab
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+
 " solarized theme
 Bundle 'altercation/vim-colors-solarized'
-
-" send commands to tmux
-" LEADER+s to select session, LEADER+sx for a command prompt
-Bundle "westoque/muxmate"
 
 " Snipmate plugin with a set of snippets and two dependencies
 Bundle 'garbas/vim-snipmate'
