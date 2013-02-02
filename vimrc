@@ -65,6 +65,7 @@ Bundle 'godlygeek/tabular'
 " provides custom movement, Type <leader><leader> + w/b
 " this marks the first character of every word
 Bundle 'Lokaltog/vim-easymotion'
+let g:EasyMotion_leader_key = '<Leader>'
 
 " Easy creation of HTML structure through CTRL-e
 " div#test => <div id="test"></div>
