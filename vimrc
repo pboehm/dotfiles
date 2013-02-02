@@ -103,6 +103,7 @@ Bundle 'mileszs/ack.vim'
 " fuzzy finder on CTRL+P
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_max_height = 30
+let g:ctrlp_cmd = 'CtrlPMixed'
 set wildignore+=*.pyc
 set wildignore+=*build/*
 
