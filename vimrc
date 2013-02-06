@@ -129,6 +129,16 @@ Bundle 'flomotlik/vim-livereload'
 " provides commenting function
 Bundle 'tomtom/tcomment_vim'
 
+" evaluate ruby code instantly
+Bundle 't9md/vim-ruby-xmpfilter'
+nmap <buffer> <M-r> <Plug>(xmpfilter-run)
+xmap <buffer> <M-r> <Plug>(xmpfilter-run)
+imap <buffer> <M-r> <Plug>(xmpfilter-run)
+
+nmap <buffer> <M-m> <Plug>(xmpfilter-mark)
+xmap <buffer> <M-m> <Plug>(xmpfilter-mark)
+imap <buffer> <M-m> <Plug>(xmpfilter-mark)
+
 filetype plugin indent on     " required!
 
 """"""""""""""""""""""""
