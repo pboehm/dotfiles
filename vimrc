@@ -101,6 +101,9 @@ endif
 " better grep
 Bundle 'mileszs/ack.vim'
 
+" autocompletion
+Bundle 'Valloric/YouCompleteMe'
+
 " fuzzy finder on CTRL+P
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_max_height = 30

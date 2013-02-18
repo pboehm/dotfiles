@@ -18,7 +18,7 @@ function check_dependency () {
 }
 
 echo "Checking for dependencies ..."
-apps="git zsh vim gvim ruby rake gem tmux"
+apps="git zsh vim gvim ruby rake gem tmux cmake"
 ARE_ALL_APPS_THERE=1
 
 for app in `echo $apps| tr ' ' '\n' `
@@ -30,8 +30,8 @@ if [[ $ARE_ALL_APPS_THERE == 0 ]]; then
     echo "you should install them ..."
     echo ""
     echo "A list of package names for different distributions:"
-    echo "Fedora: git-all zsh vim-enhanced vim-X11 ruby rubygems rubygem-rake tmux"
-    echo "Ubuntu: git zsh vim vim-gnome ruby rubygems rake tmux"
+    echo "Fedora: git-all zsh vim-enhanced cmake vim-X11 python-devel ruby rubygems rubygem-rake tmux"
+    echo "Ubuntu: git zsh vim vim-gnome ruby cmake rubygems python-dev rake tmux"
 
     exit 1
 fi
@@ -39,7 +39,6 @@ fi
 echo
 echo "You have to install the following depending rubygems ..."
 echo "tmuxinator backup"
-
 
 # finally run the rake task that installs it
 echo
@@ -51,3 +50,8 @@ git submodule update --init
 
 cd vim/bundle/vim-livereload/
 rake
+
+cd -
+
+cd vim/bundle/YouCompleteMe
+./install.sh
