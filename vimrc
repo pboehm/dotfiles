@@ -93,10 +93,8 @@ Bundle 'vim-scripts/vim-json-bundle'
 Bundle 'majutsushi/tagbar'
 
 " verbose status bar
-if has('gui_running')
-    Bundle 'Lokaltog/vim-powerline'
-    set laststatus=2
-endif
+Bundle 'Lokaltog/vim-powerline'
+set laststatus=2
 
 " better grep
 Bundle 'mileszs/ack.vim'
