@@ -18,7 +18,7 @@ function check_dependency () {
 }
 
 echo "Checking for dependencies ..."
-apps="git zsh vim gvim ruby rake gem tmux cmake"
+apps="git zsh vim gvim ruby rake gem tmux"
 ARE_ALL_APPS_THERE=1
 
 for app in `echo $apps| tr ' ' '\n' `
@@ -52,6 +52,3 @@ cd vim/bundle/vim-livereload/
 rake
 
 cd -
-
-cd vim/bundle/YouCompleteMe
-./install.sh
