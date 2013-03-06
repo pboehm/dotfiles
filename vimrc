@@ -36,6 +36,7 @@ set secure
 
 syntax enable
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Management: List of installed plugins "
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -127,6 +128,10 @@ Bundle 'flomotlik/vim-livereload'
 " provides commenting function
 Bundle 'tomtom/tcomment_vim'
 
+" display changed lines in the gutter
+Bundle 'airblade/vim-gitgutter'
+autocmd VimEnter * highlight clear SignColumn
+
 " evaluate ruby code instantly
 Bundle 't9md/vim-ruby-xmpfilter'
 nmap <buffer> <M-r> <Plug>(xmpfilter-run)
@@ -138,6 +143,7 @@ xmap <buffer> <M-m> <Plug>(xmpfilter-mark)
 imap <buffer> <M-m> <Plug>(xmpfilter-mark)
 
 filetype plugin indent on     " required!
+
 
 """"""""""""""""""""""""
 " Gui specific options "
@@ -161,6 +167,7 @@ if has('gui_running')
 
     :set guifont=Source\ Code\ Pro\ 11
 endif
+
 
 """"""""""""
 " Mappings "
