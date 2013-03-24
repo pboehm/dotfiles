@@ -94,8 +94,16 @@ Bundle 'vim-scripts/vim-json-bundle'
 " bar that holds variables/functions <leader>t
 Bundle 'majutsushi/tagbar'
 
+" solarized theme
+Bundle 'altercation/vim-colors-solarized'
+if has('gui_running')
+    set background=dark
+    colorscheme solarized
+endif
+
 " verbose status bar
 Bundle 'Lokaltog/vim-powerline'
+let g:Powerline_symbols = 'fancy'
 set laststatus=2
 
 " better grep
@@ -113,9 +121,6 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
-
-" solarized theme
-Bundle 'altercation/vim-colors-solarized'
 
 " Snipmate plugin with a set of snippets and two dependencies
 Bundle 'garbas/vim-snipmate'
@@ -152,9 +157,6 @@ filetype plugin indent on     " required!
 if has('gui_running')
     set cursorline
 
-    set background=dark
-    colorscheme solarized
-
     " highlight 80th column
     if exists('+colorcolumn')
         set colorcolumn=80
@@ -166,7 +168,7 @@ if has('gui_running')
     :set guioptions-=m  "remove menu bar
     :set guioptions-=r  "remove right-hand scroll bar
 
-    :set guifont=Source\ Code\ Pro\ 11
+    :set guifont=Source\ Code\ Pro\ for\ Powerline\ 13
 endif
 
 
