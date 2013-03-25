@@ -230,8 +230,8 @@ vmap P p :call setreg('"', getreg('0')) <CR>
 nmap <F1> <Esc>
 
 " Local config
-if filereadable(".vimrc.local")
-  source .vimrc.local
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
 endif
 
 filetype plugin on
