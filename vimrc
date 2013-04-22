@@ -134,6 +134,9 @@ Bundle 'flomotlik/vim-livereload'
 " provides commenting function
 Bundle 'tomtom/tcomment_vim'
 
+" extra markdown handling
+Bundle 'plasticboy/vim-markdown'
+
 " display changed lines in the gutter
 Bundle 'airblade/vim-gitgutter'
 autocmd VimEnter * highlight clear SignColumn
@@ -171,9 +174,14 @@ if has('gui_running')
     :set guifont=Source\ Code\ Pro\ for\ Powerline\ 13
 endif
 
+"""""""""""""""""
+" Abbreviations "
+"""""""""""""""""
+iabbrev exisiting existing
+iabbrev @@ philipp@pboehm.org
 
 """"""""""""
-" Mappings "
+"=Mappings "
 """"""""""""
 let mapleader = ","
 
@@ -183,6 +191,9 @@ map <silent> <Leader>g :Gstatus<CR>
 map <silent> <leader>t :TagbarToggle<CR>
 map <silent> <leader>c :TComment<CR>
 map <silent> <leader>m :Me<CR>
+
+" edit my .vimrc shortcut
+nnoremap <leader>ev :split $MYVIMRC<cr>/"=Mappings<cr>10j:let @/ = ""<cr>
 
 " paste from clipboard
 nmap <silent> <leader>v "+gP
@@ -216,7 +227,7 @@ vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 
 " Hide search highlighting
-map <Leader>h :set invhls <CR>
+map <Leader>h :let @/ = ""<cr>
 
 " Duplicate a selection
 " Visual mode: D
