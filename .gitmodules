@@ -16,7 +16,7 @@
 	url = https://github.com/milianw/springer_download.git
 [submodule "bin/Scripts"]
 	path = bin/Scripts
-	url = git@github.com:pboehm/Scripts.git
+	url = https://github.com/pboehm/Scripts.git
 [submodule "zsh/syntax-highlighting"]
 	path = zsh/syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
