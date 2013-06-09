@@ -192,6 +192,12 @@ map <silent> <leader>t :TagbarToggle<CR>
 map <silent> <leader>c :TComment<CR>
 map <silent> <leader>m :Me<CR>
 
+" give it a try
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
 " edit my .vimrc shortcut
 nnoremap <leader>ev :split $MYVIMRC<cr>/"=Mappings<cr>10j:let @/ = ""<cr>
 
