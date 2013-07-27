@@ -39,23 +39,10 @@ function merge_with_master {
 
 # aliases
 alias upd="sudo yum update"
-alias smbconf="sudo vi /etc/samba/smb.conf"
-alias isoumount="sudo umount /mnt"
-alias tailmess="sudo tail -f /var/log/messages"
 alias disoff="xset -display :0 dpms force off"
-alias s="sudo -i"
-alias s-="su -"
-alias lsd="ls ~/Downloads"
-alias um="umount_drives.rb"
-alias sm="sudo projects/Scripts/setup_mediatomb.sh"
 alias sctl="systemctl"
 alias vi="vim"
-alias backupebooks='rsync -a -L --delete --progress i77i.de:/var/ebooks/ ~/eBooks/i77i/'
-alias spindown="sudo hdparm -S6 /dev/sdb; sudo hdparm -y /dev/sdb"
-alias rt="rake test 2> /dev/null"
-alias gne="get_new_episodes.sh"
 alias srn="serienrenamer"
-alias smv="serienmover"
 alias dot="cd ~/.dotfiles"
 alias vim-bundleinstall="vim +BundleInstall +qall"
 
@@ -63,35 +50,19 @@ alias vim-bundleinstall="vim +BundleInstall +qall"
 function ins { sudo yum install "$@"; }
 function rem { sudo yum erase "$@"; }
 function mkc { sudo yum makecache "$@"; }
-function samba {
-    sudo systemctl "$1" smb.service;
-    sudo systemctl "$1" nmb.service;
-}
 function isomount { sudo mount -o loop -t iso9660 "$1" /mnt;  }
-function tidy {
-	perltidy -b "$1";
-	rm "$1".bak 2>/dev/null;
-}
-function downscale {
-	mencoder "$1" -o "S2" -oac mp3lame -ovc xvid -xvidencopts pass=1 -vf scale=720:400
-}
 function lsl { ls -lisa "$@" }
-function speak {
-    espeak -vde "$@"
-}
 function pr { cd ~/projects/"$1" }
-function backup {
-   `which backup` "$@" --config-file=~/.backup/config.rb
-}
 function http {
     if [[ -z $1 ]]; then
         1="50500"
     fi
     python -m SimpleHTTPServer $1
 }
+function mcd() { mkdir -p $1 && cd $1 }
+function cdf() { cd *$1*/ }
+
 
 # named directories
 hash -d proj=~/projects
-hash -d noch=~/Downloads/.nochzuschauen
 hash -d down=~/Downloads
-hash -d segments=~/.tmux-powerline/segments/

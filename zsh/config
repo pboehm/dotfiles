@@ -1,5 +1,5 @@
 # key bindings (vi)
-bindkey -v
+# bindkey -v
 bindkey '^H' backward-delete-char
 bindkey "^[[3~" delete-char
 bindkey "^r" history-incremental-search-backward
@@ -10,6 +10,11 @@ autoload -U compinit
 compinit
 autoload colors
 colors
+
+# Use C-x C-e to edit the current command line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\C-e' edit-command-line
 
 # prompt
 ZSH_THEME_GIT_PROMPT_PREFIX=" ["

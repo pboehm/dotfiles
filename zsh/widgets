@@ -1,21 +1,12 @@
 # widgets
 run-with-sudo() { LBUFFER="sudo $LBUFFER" }
 zle -N run-with-sudo
-bindkey '^[s' run-with-sudo
+bindkey '\es' run-with-sudo
 
 show-throug-less() { LBUFFER="$LBUFFER| less" }
 zle -N show-throug-less
-bindkey '^[l' show-throug-less
+bindkey '\el' show-throug-less
 
 add-help() { LBUFFER="$LBUFFER --help" }
 zle -N add-help
-bindkey '^[-' add-help
-
-# show vi mode in right prompt
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/[%BN%b]}/(main|viins)/[%BI%b]}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+bindkey '\e-' add-help
