@@ -63,12 +63,6 @@ let g:fugitive_git_executable="LC_ALL=en_US.UTF-8 git"
 " :Tabularize /regex/
 Bundle 'godlygeek/tabular'
 
-" provides custom movement, Type <leader><leader> + w/b
-" this marks the first character of every word
-Bundle 'Lokaltog/vim-easymotion'
-let g:EasyMotion_mapping_w = '<Leader>w'
-let g:EasyMotion_mapping_b = '<Leader>b'
-
 " Easy creation of HTML structure through CTRL-e
 " div#test => <div id="test"></div>
 Bundle 'sophacles/vim-bundle-sparkup'
@@ -89,7 +83,9 @@ Bundle 'gregsexton/MatchTag'
 
 " closes "'... automatically
 Bundle 'Raimondi/delimitMate'
-Bundle 'vim-scripts/vim-json-bundle'
+
+" Synatx highlighting for JSON
+Bundle 'leshill/vim-json'
 
 " bar that holds variables/functions <leader>t
 Bundle 'majutsushi/tagbar'
@@ -113,6 +109,8 @@ Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_max_height = 30
 let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_open_new_file = 't'
+
 set wildignore+=*.pyc
 set wildignore+=*build/*
 
@@ -128,31 +126,14 @@ Bundle 'pboehm/snipmate-snippets'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 
-" LiveReload Browser on file change
-Bundle 'flomotlik/vim-livereload'
-
 " provides commenting function
 Bundle 'tomtom/tcomment_vim'
-
-" extra markdown handling
-Bundle 'plasticboy/vim-markdown'
 
 " display changed lines in the gutter
 Bundle 'airblade/vim-gitgutter'
 autocmd VimEnter * highlight clear SignColumn
 
-" evaluate ruby code instantly
-Bundle 't9md/vim-ruby-xmpfilter'
-nmap <buffer> <M-r> <Plug>(xmpfilter-run)
-xmap <buffer> <M-r> <Plug>(xmpfilter-run)
-imap <buffer> <M-r> <Plug>(xmpfilter-run)
-
-nmap <buffer> <M-m> <Plug>(xmpfilter-mark)
-xmap <buffer> <M-m> <Plug>(xmpfilter-mark)
-imap <buffer> <M-m> <Plug>(xmpfilter-mark)
-
 filetype plugin indent on     " required!
-
 
 """"""""""""""""""""""""
 " Gui specific options "
