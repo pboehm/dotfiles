@@ -98,8 +98,8 @@ if has('gui_running')
 endif
 
 " verbose status bar
-Bundle 'Lokaltog/vim-powerline'
-let g:Powerline_symbols = 'fancy'
+Bundle 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
 set laststatus=2
 
 " better grep
@@ -221,11 +221,6 @@ vmap P p :call setreg('"', getreg('0')) <CR>
 " No Help, please
 nmap <F1> <Esc>
 
-" Local config
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
-
 filetype plugin on
 
 " autocmd's
@@ -245,3 +240,8 @@ autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
 " Command that set up vim to break text
 command! -nargs=* Wrap set wrap linebreak nolist
 command! -nargs=* Sn tabedit ~/.vim/bundle/snipmate-snippets/snippets
+
+" Local config
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
