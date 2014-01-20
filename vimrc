@@ -87,6 +87,9 @@ Bundle 'Raimondi/delimitMate'
 " Synatx highlighting for JSON
 Bundle 'leshill/vim-json'
 
+" Golang language support
+Bundle 'jnwhiteh/vim-golang'
+
 " bar that holds variables/functions <leader>t
 Bundle 'majutsushi/tagbar'
 
