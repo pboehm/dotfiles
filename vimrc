@@ -88,7 +88,10 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'leshill/vim-json'
 
 " Golang language support
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
+
+" Elixir language support
+Bundle 'elixir-lang/vim-elixir'
 
 " bar that holds variables/functions <leader>t
 Bundle 'majutsushi/tagbar'
@@ -98,6 +101,7 @@ Bundle 'altercation/vim-colors-solarized'
 if has('gui_running')
     set background=dark
     colorscheme solarized
+    highlight clear SignColumn
 endif
 
 " verbose status bar
@@ -116,6 +120,8 @@ let g:ctrlp_open_new_file = 't'
 
 set wildignore+=*.pyc
 set wildignore+=*build/*
+set wildignore+=*__pycache__/*
+set wildignore+=*.egg-info/*
 
 " set the default action of Enter to new Tab
 let g:ctrlp_prompt_mappings = {
@@ -125,7 +131,7 @@ let g:ctrlp_prompt_mappings = {
 
 " Snipmate plugin with a set of snippets and two dependencies
 Bundle 'garbas/vim-snipmate'
-Bundle 'pboehm/snipmate-snippets'
+Bundle 'honza/vim-snippets'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 
@@ -134,7 +140,7 @@ Bundle 'tomtom/tcomment_vim'
 
 " display changed lines in the gutter
 Bundle 'airblade/vim-gitgutter'
-autocmd VimEnter * highlight clear SignColumn
+autocmd ColorScheme * highlight clear SignColumn
 
 filetype plugin indent on     " required!
 
