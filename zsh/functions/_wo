@@ -1,0 +1,2 @@
+#compdef wo
+_directories -W ~/work -/
