@@ -1,5 +1,6 @@
 # cd
 alias ..='cd ..'
+alias ...='cd ../..'
 
 # git-shortcuts
 alias git="LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 git"
@@ -9,15 +10,16 @@ alias gb='git branch'
 alias gc='git commit'
 alias gco='git checkout'
 alias gd="git diff"
+alias gdc="git diff --cached"
 alias gl="git log --pretty=oneline"
 alias gp='git push'
 alias gpl="git pull"
 alias gs="git status"
 alias gst="git stash"
 alias feature="git checkout -b"
-alias mwm="merge_with_master"
 
 function gam { git commit -a -m "$1"; }
+function gm { git commit -m "$1"; }
 function gp {
     git status 2> /dev/null | grep 'On branch master' > /dev/null && git push
 }
@@ -38,18 +40,12 @@ function merge_with_master {
 }
 
 # aliases
-alias upd="sudo yum update"
-alias disoff="xset -display :0 dpms force off"
 alias sctl="systemctl"
 alias vi="vim"
-alias srn="serienrenamer"
 alias dot="cd ~/.dotfiles"
 alias vim-bundleinstall="vim +BundleInstall +qall"
 
 # functions
-function ins { sudo yum install "$@"; }
-function rem { sudo yum erase "$@"; }
-function mkc { sudo yum makecache "$@"; }
 function isomount { sudo mount -o loop -t iso9660 "$1" /mnt;  }
 function lsl { ls -lisa "$@" }
 function pr { cd ~/projects/"$1" }
@@ -66,4 +62,5 @@ function cdf() { cd *$1*/ }
 
 # named directories
 hash -d proj=~/projects
+hash -d work=~/work
 hash -d down=~/Downloads
