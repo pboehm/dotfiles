@@ -50,7 +50,7 @@ function isomount { sudo mount -o loop -t iso9660 "$1" /mnt;  }
 function lsl { ls -lisa "$@" }
 function pr { cd ~/projects/"$1" }
 function wo { cd ~/work/"$1" }
-function http {
+function httpserv {
     if [[ -z $1 ]]; then
         1="50500"
     fi
