@@ -156,12 +156,12 @@ if has('gui_running')
     endif
 
     " remove some buttons from the toolbar
-    aunmenu ToolBar.Print
+    "aunmenu ToolBar.Print
 
     :set guioptions-=m  "remove menu bar
     :set guioptions-=r  "remove right-hand scroll bar
 
-    :set guifont=Source\ Code\ Pro\ for\ Powerline\ 14
+    :set guifont=Sauce\ Code\ Powerline:h13"
 endif
 
 """""""""""""""""

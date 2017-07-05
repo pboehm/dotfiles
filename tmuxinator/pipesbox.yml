@@ -13,5 +13,5 @@ windows:
     - run
   - market:
     - cd pipes-market/
-    - activator run
+    - BOX_URL='https://meine.philipp.dev/%s/' activator run
   - zsh:

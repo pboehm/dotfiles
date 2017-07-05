@@ -14,3 +14,8 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*:descriptions' format '%S%d%s'
 
 zstyle ':completion::complete:*' rehash true
+
+# completions for some programs
+if [ $commands[kubectl] ]; then
+    source <(kubectl completion zsh)
+fi

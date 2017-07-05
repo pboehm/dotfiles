@@ -46,6 +46,7 @@ alias sctl="systemctl"
 alias vi="vim"
 alias dot="cd ~/.dotfiles"
 alias vim-bundleinstall="vim +BundleInstall +qall"
+alias mux="tmuxinator start"
 
 # functions
 function isomount { sudo mount -o loop -t iso9660 "$1" /mnt;  }
