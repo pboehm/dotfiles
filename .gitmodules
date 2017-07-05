@@ -4,7 +4,7 @@
     ignore = dirty
 [submodule "zsh/git-prompt"]
 	path = zsh/git-prompt
-	url = https://github.com/pboehm/zsh-git-prompt.git
+	url = https://github.com/olivierverdier/zsh-git-prompt.git
 [submodule "zsh/additional_completions"]
 	path = zsh/additional_completions
 	url = https://github.com/zsh-users/zsh-completions
