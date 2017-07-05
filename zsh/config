@@ -17,12 +17,25 @@ zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
 
 # prompt
-ZSH_THEME_GIT_PROMPT_PREFIX=" ["
-ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[blue]%}"
-
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PROMPT='%2~ $(git_super_status)%B»%b '
+
+# include version control information in prompt
+setopt prompt_subst
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' actionformats '%F{3}(%F{2}%b%F{blue}|%F{1}%a%F{3})%f'
+zstyle ':vcs_info:*' formats '%F{3}(%F{blue}%b%F{3})%f'
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+zstyle ':vcs_info:*' enable git svn cvs
+
+# or use pre_cmd, see man zshcontrib
+vcs_info_wrapper() {
+  vcs_info
+  if [ -n "$vcs_info_msg_0_" ]; then
+    echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
+  fi
+}
+
+export PROMPT='%2~ $(vcs_info_wrapper)»%b '
 
 set_right_prompt () {
   if [[ ! -z $VIRTUAL_ENV ]]; then
@@ -65,4 +78,4 @@ setopt completeinword
 setopt menucomplete
 
 # load functions
-fpath=(~/.zsh/functions ~/.zsh/additional_completions/src $fpath)
+fpath=(~/.zsh/functions $fpath)
