@@ -1,0 +1,2 @@
+#compdef we
+_directories -W ~/work-external -/

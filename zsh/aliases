@@ -19,6 +19,7 @@ alias gst="git stash"
 alias feature="git checkout -b"
 alias rstart="git flow release start"
 alias rfinish="git flow release finish"
+alias kcl="kubectl"
 
 function gam { git commit -a -m "$1"; }
 function gm { git commit -m "$1"; }
@@ -53,6 +54,7 @@ function isomount { sudo mount -o loop -t iso9660 "$1" /mnt;  }
 function lsl { ls -lisa "$@" }
 function pr { cd ~/projects/"$1" }
 function wo { cd ~/work/"$1" }
+function we { cd ~/work-external/"$1" }
 function httpserv {
     if [[ -z $1 ]]; then
         1="50500"
